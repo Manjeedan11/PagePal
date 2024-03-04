@@ -1,0 +1,171 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    background-image: url(engin-akyurt-Hlkuojv_P6I-unsplash.jpg);
+    background-size: cover;
+    backdrop-filter: blur(12px);
+    margin: 0; /* Remove default body margin */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh; /* Ensure body takes up full viewport height */
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+canvas.pdf-viewer {
+    border: 1px solid #ccc;
+    margin: 20px auto;
+    display: block;
+    width: 600px; /* Set your desired width */
+    height: 600px; /* Set your desired height */
+    animation: zoomIn 1s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+footer {
+    background-color: #274f69;
+    color: #fff;
+    padding: 20px; /* Decrease padding to lower height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top-left-radius: 30px; /* Add curved edges */
+    border-top-right-radius: 30px; /* Add curved edges */
+    width: fit-content; /* Set width to fit content */
+    margin: 10px auto; /* Center the footer and provide space from the content above */
+}
+
+#dictionary {
+    margin-bottom: 30px;
+}
+
+#dictionary h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 200px;
+    border: none;
+    margin-top: 4px;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-bottom: 6px;
+    background-color: #eee;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li {
+    margin-right: 10px;
+}
+
+.pagination button {
+    background-color: #9d1b1b;
+}
+
+.pagination button:hover {
+    background-color: #ff0000;
+}
+
+#zoomValue {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #ccc;
+    animation: fadeIn 1s ease;
+}
+
+.open-form-button {
+    position: fixed;
+    top: 20px; /* Adjust top position */
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 999; /* Ensure button is above other elements */
+}
+
+.open-form-button:hover {
+    background-color: #438546;
+}
+
+#timer {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+}

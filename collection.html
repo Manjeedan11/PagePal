@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+
+    <!--=============== REMIXICONS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.1/remixicon.css"
+    />
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="swiper-bundle.min.css" />
+
+    <title>PagePilot</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--=============== HEADER & NAV  ===============-->
+    <section class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo"> <i class="ri-book-3-line"></i>PagePilot</a>
+
+        <div class="nav__menu">
+          <ul class="nav__list">
+            
+            </li>
+            <!-- <li class="nav__item">
+              <a href="#new" class="nav__link">
+                <i class="ri-bookmark-line"></i>
+                <span>New Books</span>
+              </a>
+            </li> -->
+          </ul>
+        </div>
+
+        <div class="nav__actions">
+          <a href="home.html"><i class="ri-home-line"></i></a>
+          <!--- bot --->
+          <a href="Chatbot/templates/index.html"><i class="ri-robot-2-line"></i></a>
+
+          <!--- login --->
+          <!-- <a href="Login and Registration Page/index.html"><i class="ri-user-line login-button" ></i></a> -->
+
+          <!--- theme --->
+          <i class="ri-moon-line theme-button" id="theme-button"></i>
+        </div>
+      </nav>
+    </section>
+
+    <!--=============== SEARCH  ===============-->
+    <div class="search" id="search-content">
+      <form action="" class="search__form">
+        <i class="ri-search-line search__icon"></i>
+
+        <input
+          type="search"
+          placeholder="What are you looking for?"
+          class="search__input"
+        />
+      </form>
+
+      <i class="ri-close-line search__close" id="search-close"></i>
+    </div>
+
+    <!--=============== LOGIN  ===============-->
+
+    <!-- <div class="login grid" id="login-content">
+      <div class="text">Thank You For Your Feedback!</div>
+      <form action="" class="login__form grid">
+        <h3 class="login__title">Feedback</h3>
+
+        <div class="login__group grid">
+          <div>
+            <label for="login-email" class="login__label">Book Title</label>
+            <input
+              type="email"
+              class="login__input"
+              placeholder="Write your email"
+              id="login-email"
+            />
+          </div>
+
+          <div>
+            <label for="login-email" class="login__label">Author</label>
+            <input
+              type="email"
+              class="login__input"
+              placeholder="Write your email"
+              id="login-email"
+            />
+          </div> -->
+
+          <!-- <div>
+            <label for="login-pass" class="login__label">Comment</label>
+            <input
+              type="text"
+              class="login__input"
+              placeholder="Describe your experience"
+              id="login-pass"
+            />
+          </div> -->
+        </div>
+
+        <div>
+            <button type="submit" class="login__button button">Submit</button>
+        </div>
+      </form>
+
+      <!-- <i class="ri-close-line login__close" id="login-close"></i> -->
+    </div>
+
+
+    <main class="main">
+  
+
+
+       <!--=============== MY COLLECTIONS  ===============-->
+
+       <section class="featured section" id="collection">
+        <h2 class="section__title">My Collections</h2>
+
+        <div class="featured__container container">
+          <div class="featured__swiper swiper">
+            <div class="swiper-wrapper">
+              
+              <article class="featured__card swiper-slide">
+                <img src="Books_Cover/All_the_king's_man.jpg" alt="image" class="featured__img" />
+                <h2 class="featured__title">All The King's Men</h2><br>
+               
+                <div class="featured__actions">
+                 </div>
+
+                 <a href="PdfViewer/view.html?pdf=All_the_King's_men.pdf" class="button read-button">Read</a>
+                 <input type="button" class="button download-button" value="Download" onclick="DownloadFile('All_the_King\'s_men.pdf')" />
+                  
+                 <div class="overlay"></div>
+                
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img src="Books_Cover/Dragons_of_Eden.jpg" alt="image" class="featured__img" />
+
+                <h2 class="featured__title">Dragons Of Eden</h2><br>
+
+                <div class="featured__actions">
+                 </div>
+                
+                 <a href="PdfViewer/view.html?pdf=Dragons_of_Eden.pdf" class="button read-button">Read</a>
+                 <input type="button" class="button download-button" value="Download" onclick="DownloadFile('Dragons_of_Eden.pdf')" />
+                 <!--<div class="overlay"></div>-->
+
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img src="Books_Cover/Huckleberry_Finn.jpg" alt="image" class="featured__img" />
+
+                <h2 class="featured__title">Huckleberry Finn</h2><br>
+
+                <div class="featured__actions">
+                 </div>
+                
+                 <a href="PdfViewer/view.html?pdf=The_Adventures_of_Huckleberry Finn.pdf" class="button read-button">Read</a>
+                 <input type="button" class="button download-button" value="Download" onclick="DownloadFile('The_Adventures_of_Huckleberry Finn.pdf')" />
+
+                 <!--<div class="overlay"></div>--> 
+
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img src="Books_Cover/metamorphosis.jpg" alt="image" class="featured__img" />
+
+                <h2 class="featured__title">Metamorphosis</h2><br>
+
+                <div class="featured__actions">
+                 </div>
+
+                 <a href="PdfViewer/view.html?pdf=Metamorphosis.pdf" class="button read-button">Read</a>
+                 <input type="button" class="button download-button" value="Download" onclick="DownloadFile('Metamorphosis.pdf')" />
+
+                 <!--<div class="overlay"></div>-->
+
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img src="Books_Cover/money_for_nothing.jpg" alt="image" class="featured__img" />
+
+                <h2 class="featured__title">Money For Nothing</h2><br>
+
+                <div class="featured__actions">
+                 </div>
+                 
+                 <a href="PdfViewer/view.html?pdf=Money_for_Nothing.pdf" class="button read-button">Read</a>
+                 <input type="button" class="button download-button" value="Download" onclick="DownloadFile('Money_for_Nothing.pdf')" />
+
+                 <!--<div class="overlay"></div>-->
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img src="Books_Cover/C&P_cover.jpg" alt="image" class="featured__img" />
+
+                <h2 class="featured__title">Crime & Punish</h2><br>
+
+                <div class="featured__actions">
+                 </div>
+                 
+                 <a href="PdfViewer/view.html?pdf=Crime_and_Punishment.pdf" class="button read-button">Read</a>
+                 <input type="button" class="button download-button" value="Download" onclick="DownloadFile('Crime_and_Punishment.pdf')" />
+
+                 <!--<div class="overlay"></div>-->
+
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img src="Books_Cover/the_prince.jpg" alt="image" class="featured__img" />
+
+                <h2 class="featured__title">The Prince</h2><br>
+                
+                <div class="featured__actions">
+                </div>
+
+                 <a href="PdfViewer/view.html?pdf=The_Prince.pdf" class="button read-button">Read</a>
+                 <input type="button" class="button download-button" value="Download" onclick="DownloadFile('Oliver_Twist.pdf')" />
+
+                 <!--<div class="overlay"></div>-->
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img src="Books_Cover/The_testament.jpg" alt="image" class="featured__img" />
+
+                <h2 class="featured__title">The Testament</h2><br>
+                
+                <div class="featured__actions">
+                 </div>
+
+                 <a href="PdfViewer/view.html?pdf=The_Testament.pdf" class="button read-button">Read</a>
+                 <input type="button" class="button download-button" value="Download" onclick="DownloadFile('The_Testament.pdf')" />
+
+                 <!--<div class="overlay"></div>-->
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img src="Books_Cover/wizard_of_OZ.jpg" alt="image" class="featured__img" />
+
+                <h2 class="featured__title">Wizard Of Oz</h2><br>
+                
+                <div class="featured__actions">
+                </div>
+
+                 <a href="PdfViewer/view.html?pdf=The_wizard_of_OZ.pdf" class="button read-button">Read</a>
+                 <input type="button" class="button download-button" value="Download" onclick="DownloadFile('The_wizard_of_OZ.pdf')" />
+
+                <!--<div class="overlay"></div>-->
+              </article>
+
+              
+              <article class="featured__card swiper-slide">
+                <img src="Books_Cover/purity_in_death.jpg" alt="image" class="featured__img" />
+
+                <h2 class="featured__title">Purity In Death</h2><br>
+                
+                <div class="featured__actions">
+                 </div>
+
+                 <a href="PdfViewer/view.html?pdf=Purity_in_Death.pdf" class="button read-button">Read</a>
+                 <input type="button" class="button download-button" value="Download" onclick="DownloadFile('Purity_in_Death.pdf')" />
+
+                 <!--<div class="overlay"></div>-->
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img src="Books_Cover/bible.jpg" alt="image" class="featured__img" />
+
+                <h2 class="featured__title">The Bible</h2><br>
+                
+                <div class="featured__actions">
+                 </div>
+
+                 <a href="PdfViewer/view.html?pdf=The_Bible.pdf" class="button read-button">Read</a>
+                 <input type="button" class="button download-button" value="Download" onclick="DownloadFile('The_Bible.pdf')" />
+
+                 <!--<div class="overlay"></div>-->
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img src="Books_Cover/Hitler's_secret_backers.jpg" alt="image" class="featured__img" />
+
+                <h2 class="featured__title">Secret Backers</h2><br>
+                
+                <div class="featured__actions">
+                 </div>
+
+                 <a href="PdfViewer/view.html?pdf=Secret_Backers.pdf" class="button read-button">Read</a>
+                 <input type="button" class="button download-button" value="Download" onclick="DownloadFile('Secret_Backers.pdf')" />
+
+                 <!--<div class="overlay"></div>-->
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img src="Books_Cover/Lonesome_dove.jpg" alt="image" class="featured__img" />
+
+                <h2 class="featured__title">Lonesome Dove</h2><br>
+                
+                <div class="featured__actions">
+                 </div>
+
+                 <a href="PdfViewer/view.html?pdf=Lonesome_Dove.pdf" class="button read-button">Read</a>
+                 <input type="button" class="button download-button" value="Download" onclick="DownloadFile('Lonesome_Dove.pdf')" />
+
+                 <!--<div class="overlay"></div>-->
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img src="Books_Cover/Lord_Of_Rings.jpg" alt="image" class="featured__img" />
+
+                <h2 class="featured__title">Lord Of Rings</h2><br>
+                
+                <div class="featured__actions">
+                 </div>
+
+                 <a href="PdfViewer/view.html?pdf=Lord_of_the_Rings.pdf" class="button read-button">Read</a>
+                 <input type="button" class="button download-button" value="Download" onclick="DownloadFile('Lord_of_the_Rings.pdf')" />
+
+                 <!--<div class="overlay"></div>-->
+              </article>
+
+              <article class="featured__card swiper-slide">
+                <img src="Books_Cover/Black_Beauty.jpg" alt="image" class="featured__img" />
+
+                <h2 class="featured__title">Black Beauty</h2><br>
+                
+                <div class="featured__actions">
+                 </div>
+
+                 <a href="PdfViewer/view.html?pdf=Black_Beauty.pdf" class="button read-button">Read</a>
+                 <input type="button" class="button download-button" value="Download" onclick="DownloadFile('Black_Beauty.pdf')" />
+
+                 <!--<div class="overlay"></div>-->
+              </article>
+
+                           
+            </div>
+
+            <div class="swiper-button-prev">
+              <i class="ri-arrow-left-s-line"></i>
+            </div>
+
+            <div class="swiper-button-next">
+              <i class="ri-arrow-right-s-line"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--=============== RECOMMENDATION  ===============-->
+
+      <section class="featured_section" id="featuredBooks">
+        <h2 class="section__title">Recommendation</h2>
+      
+        <div class="featured__container container">
+            <div class="featured__swiper swiper">
+                <div class="swiper-wrapper">
+                    <!-- Featured books articles will be appended here -->
+                </div>
+                <div class="swiper-button-prev">
+                    <i class="ri-arrow-left-s-line"></i>
+                </div>
+                <div class="swiper-button-next">
+                    <i class="ri-arrow-right-s-line"></i>
+                </div>
+            </div>
+        </div>
+      </section>
+
+
+      <section class="contact" id="contact">
+        <h2 class="heading">Feedback Hub<span></span></h2>
+    
+        <form id="bookForm">
+            <div class="input-box">
+                <input type="text" id="book_title" name="book_title" placeholder="Book Title" />
+                <input type="text" id="book_author" name="book_author" placeholder="Book Author" />
+            </div>
+    
+            <textarea id="message" name="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input type="submit" value="Submit" class="button" />
+        </form>
+        <script src="Recommendation/recommendation.js"></script>
+        <script src="collection.js"></script>
+        <script src="firebase_config.js"></script>
+      </section>
+
+            <div class="swiper-button-prev">
+              <i class="ri-arrow-left-s-line"></i>
+            </div>
+
+            <div class="swiper-button-next">
+              <i class="ri-arrow-right-s-line"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    </main>
+
+    
+
+    <!--=============== SCROLL UP  ===============-->
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-line"></i>
+    </a>
+    
+    <script src="scrollreveal.min.js"></script>
+
+    <script src="swiper-bundle.min.js"></script>
+
+    <script src="script.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js" type="module"></script> <!-- SDK for Firebase connection-->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js" type="module"></script>
+
+  </body>
+</html>

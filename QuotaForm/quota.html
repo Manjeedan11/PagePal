@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quota Form</title>
+    <link rel="stylesheet" href="quota.css">
+</head>
+<body>
+
+    <div class="container">
+       <div class="title">Quota Generator</div>
+       
+       <form id="quota-form" action="#">
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details">What is your Age?</span>
+                <input id="age-input" type="number" min="0" max="100" placeholder="Enter your age" required>
+            </div>
+
+            <div class="input-box">
+                <span class="details">Select your Education Level<p id="education-level">Education Level: None</p></span>
+                <input id="education-range" type="range" min="0" max="3" value="0" required>
+            </div>
+
+            <div class="input-box">
+                <span class="details">What is your Reading Speed?</span>
+                <input id="reading-speed-input" type="number" min="0" max="5" placeholder="Rate from 0 to 5" required>
+            </div>
+
+            <div class="input-box">
+                <span class="details">How would you rate your Vocabulary?</span>
+                <input id="vocabulary-input" type="number" min="0" max="5" placeholder="Rate from 0 to 5" required>
+            </div>
+
+            <div class="input-box">
+                <span class="details">How would you rate your Attention Span?</span>
+                <input id="attention-span-input" type="number" min="0" max="5" placeholder="Rate from 0 to 5" required>
+            </div>
+
+            <div class="input-box">
+                <span class="details">How would you rate your Language Proficiency?</span>
+                <input id="language-proficiency-input" type="number" min="0" max="5" placeholder="Rate from 0 to 5" required>
+            </div>
+            <div class="input-box">
+                <span class="details">How many Books have you read?</span>
+                <input id="books-read-input" type="number" min="0" max="100" placeholder="" required>
+            </div>
+        </div>
+
+        <!-- Container for prediction output -->
+    <div id="prediction-output-container">
+        <div id="recorded-time"></div>
+        <div id="prediction-output"></div>
+    </div>
+
+    
+
+        <div class="button">
+            <input id="get-quota-button" type="submit" value="Get Quota">
+        </div>
+       </form>
+    </div>
+
+    <script src="quota.js"></script>
+</body>
+</html>
