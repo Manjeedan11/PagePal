@@ -305,20 +305,15 @@
         </div>
       </section> -->
 
-     <input type="text" id="searchInput" placeholder="Search for books...">
-     <div id="searchResults" class="featured__container container">
-     <div class="featured__swiper swiper"></div>
-     </div>
-
-
       <!--=============== FEATURED  ===============-->      
-      
-      <div id="searchResults" class="featured__container container">
-        <div class="featured__swiper swiper"></div>
-      </div>
 
       <section class="featured section" id="featured">
         <h2 class="section__title">Featured Books</h2>
+
+        <div id="containertwo">
+          <input type="search" id="searchInput" placeholder="Search for books...">
+          <button id="searchButton" class="button buy-button">Search</button>
+      </div>
 
         <div class="featured__container container">
           <div class="featured__swiper swiper">
@@ -329,11 +324,11 @@
 
                 <h2 class="featured__title">All The King's Men</h2>
                 <div class="featured__prices">
-                  <span class="featured__discount">$8.49</span>
-                  <span class="featured__price">$9.99</span>
+                  <span class="featured__discount">$9.99</span>
+                  <span class="featured__price">$11.75</span>
                 </div>
 
-                <button onclick="Pay1()" class="button buy-button">Buy now</button>
+                <button onclick="redirect()" class="button buy-button">Buy now</button>
 
                 <div class="featured__actions">
                   <button><a href="Sample_PdfViewer/sample_view.html?pdf=All_the_King's_men-pages-deleted.pdf"><i class="ri-eye-line" style="color: green;"></i></a></button>
@@ -347,11 +342,11 @@
 
                 <h2 class="featured__title">Dragons Of Eden</h2>
                 <div class="featured__prices">
-                  <span class="featured__discount">$10.19</span>
-                  <span class="featured__price">$11.99</span>
+                  <span class="featured__discount">$11.99</span>
+                  <span class="featured__price">$14.11</span>
                 </div>
 
-                <button onclick="redirect()" class="button buy-button">Buy now</button>
+                <button onclick="redirect1()" class="button buy-button">Buy now</button>
 
                 <div class="featured__actions">
                   <button><a href="Sample_PdfViewer/sample_view.html?pdf=Dragons_of_Eden-pages-deleted.pdf"><i class="ri-eye-line" style="color: green;"></i></a></button>
@@ -363,11 +358,11 @@
 
                 <h2 class="featured__title">Huckleberry Finn</h2>
                 <div class="featured__prices">
-                  <span class="featured__discount">$5.94</span>
-                  <span class="featured__price">$6.99</span>
+                  <span class="featured__discount">$6.99</span>
+                  <span class="featured__price">$8.22</span>
                 </div>
 
-                <button onclick="redirect()" class="button buy-button">Buy now</button>
+                <button onclick="redirect2()" class="button buy-button">Buy now</button>
 
                 <div class="featured__actions">
                   <button><a href="Sample_PdfViewer/sample_view.html?pdf=The_Adventures_of_Huckleberry Finn-pages-deleted.pdf"><i class="ri-eye-line" style="color: green;"></i></a></button>
@@ -379,11 +374,11 @@
 
                 <h2 class="featured__title">Metamorphosis</h2>
                 <div class="featured__prices">
-                  <span class="featured__discount">$7.64</span>
-                  <span class="featured__price">$8.99</span>
+                  <span class="featured__discount">$8.99</span>
+                  <span class="featured__price">$10.58</span>
                 </div>
 
-                <button onclick="redirect()" class="button buy-button">Buy now</button>
+                <button onclick="redirect3()" class="button buy-button">Buy now</button>
 
                 <div class="featured__actions">
                   <button><a href="Sample_PdfViewer/sample_view.html?pdf=Metamorphosis-pages-deleted.pdf"><i class="ri-eye-line" style="color: green;"></i></a></button>
@@ -395,11 +390,11 @@
 
                 <h2 class="featured__title">Money For Nothing</h2>
                 <div class="featured__prices">
-                  <span class="featured__discount">$9.34</span>
-                  <span class="featured__price">$10.99</span>
+                  <span class="featured__discount">$10.99</span>
+                  <span class="featured__price">$12.93</span>
                 </div>
 
-                <button onclick="redirect()" class="button buy-button">Buy now</button>
+                <button onclick="redirect4()" class="button buy-button">Buy now</button>
 
                 <div class="featured__actions">
                   <button><a href="Sample_PdfViewer/sample_view.html?pdf=Money_for_Nothing-pages-deleted.pdf"><i class="ri-eye-line" style="color: green;"></i></a></button>
@@ -411,11 +406,11 @@
 
                 <h2 class="featured__title">Crime & Punish</h2>
                 <div class="featured__prices">
-                  <span class="featured__discount">$6.79</span>
-                  <span class="featured__price">$7.99</span>
+                  <span class="featured__discount">$7.99</span>
+                  <span class="featured__price">$9.40</span>
                 </div>
 
-                <button onclick="redirect()" class="button buy-button">Buy now</button>
+                <button onclick="redirect5()" class="button buy-button">Buy now</button>
 
                 <div class="featured__actions">
                   <button><a href="Sample_PdfViewer/sample_view.html?pdf=Crime_and_Punishment-pages-deleted.pdf"><i class="ri-eye-line" style="color: green;"></i></a></button>
@@ -427,11 +422,11 @@
 
                 <h2 class="featured__title">Oliver Twist</h2>
                 <div class="featured__prices">
-                  <span class="featured__discount">$5.09</span>
-                  <span class="featured__price">$5.99</span>
+                  <span class="featured__discount">$5.99</span>
+                  <span class="featured__price">$7.05</span>
                 </div>
 
-                <button onclick="redirect()" class="button buy-button">Buy now</button>
+                <button onclick="redirect6()" class="button buy-button">Buy now</button>
 
                 <div class="featured__actions">
                   <button><a href="Sample_PdfViewer/sample_view.html?pdf=Oliver_Twist-pages-deleted.pdf"><i class="ri-eye-line" style="color: green;"></i></a></button>
@@ -443,11 +438,11 @@
 
                 <h2 class="featured__title">The Prince</h2>
                 <div class="featured__prices">
-                  <span class="featured__discount">$6.79</span>
-                  <span class="featured__price">$7.99</span>
+                  <span class="featured__discount">$7.99</span>
+                  <span class="featured__price">$9.40</span>
                 </div>
 
-                <button onclick="redirect()" class="button buy-button">Buy now</button>
+                <button onclick="redirect7()" class="button buy-button">Buy now</button>
 
                 <div class="featured__actions">
                   <button><a href="Sample_PdfViewer/sample_view.html?pdf=The_Prince-pages-deleted.pdf"><i class="ri-eye-line" style="color: green;"></i></a></button>
@@ -459,11 +454,11 @@
 
                 <h2 class="featured__title">The Testament</h2>
                 <div class="featured__prices">
-                  <span class="featured__discount">$8.49</span>
-                  <span class="featured__price">$9.99</span>
+                  <span class="featured__discount">$9.99</span>
+                  <span class="featured__price">$11.75</span>
                 </div>
 
-                <button onclick="redirect()" class="button buy-button">Buy now</button>
+                <button onclick="redirect8()" class="button buy-button">Buy now</button>
 
                 <div class="featured__actions">
                   <button><a href="Sample_PdfViewer/sample_view.html?pdf=The_Testament-pages-deleted.pdf"><i class="ri-eye-line" style="color: green;"></i></a></button>
@@ -475,11 +470,11 @@
 
                 <h2 class="featured__title">Wizard Of Oz</h2>
                 <div class="featured__prices">
-                  <span class="featured__discount">$5.94</span>
-                  <span class="featured__price">$6.99</span>
+                  <span class="featured__discount">$6.99</span>
+                  <span class="featured__price">$8.22</span>
                 </div>
 
-                <button onclick="redirect()" class="button buy-button">Buy now</button>
+                <button onclick="redirect9()" class="button buy-button">Buy now</button>
 
                 <div class="featured__actions">
                   <button><a href="Sample_PdfViewer/sample_view.html?pdf=The_wizard_of_OZ-pages-deleted.pdf"><i class="ri-eye-line" style="color: green;"></i></a></button>
@@ -491,11 +486,11 @@
 
                 <h2 class="featured__title">Purity In Death</h2>
                 <div class="featured__prices">
-                  <span class="featured__discount">$7.64</span>
-                  <span class="featured__price">$8.99</span>
+                  <span class="featured__discount">$8.99</span>
+                  <span class="featured__price">$10.58</span>
                 </div>
 
-                <button onclick="redirect()" class="button buy-button">Buy now</button>
+                <button onclick="redirect10()" class="button buy-button">Buy now</button>
 
                 <div class="featured__actions">
                   <button><a href="Sample_PdfViewer/sample_view.html?pdf=Purity_in_Death-pages-deleted.pdf"><i class="ri-eye-line" style="color: green;"></i></a></button>
@@ -507,14 +502,14 @@
 
               <h2 class="featured__title">The Bible</h2>
               <div class="featured__prices">
-                <span class="featured__discount">$12.74</span>
-                <span class="featured__price">$14.99</span>
+                <span class="featured__discount">$14.99</span>
+                <span class="featured__price">$17.63</span>
               </div>
 
-              <button onclick="redirect()" class="button buy-button">Buy now</button>
+              <button onclick="redirect11()" class="button buy-button">Buy now</button>
 
                 <div class="featured__actions">
-                  <button><a href="Sample_PdfViewer/sample_view.html?pdf=-deleted.pdf"><i class="ri-eye-line" style="color: green;"></i></a></button>
+                  <button><a href="Sample_PdfViewer/sample_view.html?pdf=Bible.pdf"><i class="ri-eye-line" style="color: green;"></i></a></button>
                 </div>
             </article>
 
@@ -523,11 +518,11 @@
 
               <h2 class="featured__title">Secret Backers</h2>
               <div class="featured__prices">
-                <span class="featured__discount">$8.49</span>
-                <span class="featured__price">$9.99</span>
+                <span class="featured__discount">$9.99</span>
+                <span class="featured__price">$11.75</span>
               </div>
 
-              <button onclick="redirect()" class="button buy-button">Buy now</button>
+              <button onclick="redirect12()" class="button buy-button">Buy now</button>
 
                 <div class="featured__actions">
                   <button><a href="Sample_PdfViewer/sample_view.html?pdf=Secret_backers-pages-deleted.pdf"><i class="ri-eye-line" style="color: green;"></i></a></button>
@@ -539,11 +534,11 @@
 
               <h2 class="featured__title">Lonesome Dove</h2>
               <div class="featured__prices">
-                <span class="featured__discount">$8.49</span>
-                <span class="featured__price">$9.99</span>
+                <span class="featured__discount">$9.99</span>
+                <span class="featured__price">$11.75</span>
               </div>
 
-              <button onclick="redirect()" class="button buy-button">Buy now</button>
+              <button onclick="redirect13()" class="button buy-button">Buy now</button>
 
                 <div class="featured__actions">
                   <button><a href="Sample_PdfViewer/sample_view.html?pdf=Lonesome_Dove-pages-deleted.pdf"><i class="ri-eye-line" style="color: green;"></i></a></button>
@@ -555,11 +550,11 @@
 
               <h2 class="featured__title">Lord Of Rings</h2>
               <div class="featured__prices">
-                <span class="featured__discount">$12.74</span>
-                <span class="featured__price">$14.99</span>
+                <span class="featured__discount">$14.99</span>
+                <span class="featured__price">$17.63</span>
               </div>
 
-              <button onclick="redirect()" class="button buy-button">Buy now</button>
+              <button onclick="redirect14()" class="button buy-button">Buy now</button>
 
                 <div class="featured__actions">
                   <button><a href="Sample_PdfViewer/sample_view.html?pdf=Lord_of_Rings-pages-deleted.pdf"><i class="ri-eye-line" style="color: green;"></i></a></button>
@@ -571,11 +566,11 @@
 
               <h2 class="featured__title">Black Beauty</h2>
               <div class="featured__prices">
-                <span class="featured__discount">$6.79</span>
-                <span class="featured__price">$7.99</span>
+                <span class="featured__discount">$7.99</span>
+                <span class="featured__price">$9.40</span>
               </div>
 
-              <button onclick="redirect()" class="button buy-button">Buy now</button>
+              <button onclick="redirect15()" class="button buy-button">Buy now</button>
 
                 <div class="featured__actions">
                   <button><a href="Sample_PdfViewer/sample_view.html?pdf=Black_Beauty-pages-deleted.pdf"><i class="ri-eye-line" style="color: green;"></i></a></button>
@@ -1185,5 +1180,6 @@
     <script src="swiper-bundle.min.js"></script>
 
     <script src="script.js"></script>
+    <script src="payment.js"></script>
   </body>
 </html>

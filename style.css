@@ -1149,3 +1149,38 @@ form .textarea textarea{
   opacity: 0.8; 
 }
 
+.hidden-slide {
+  display: none;
+}
+
+#containertwo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#searchInput {
+  padding: 10px;
+  width: 300px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e0e0e0; /* Setting a slightly darker grey background for the input */
+  text-align: center;
+}
+
+#searchButton {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 10px; /* Adjust the value to bring the button down */
+}
+
+#searchResults {
+  margin-top: 30px; /* Adding some space between search bar and results */
+  margin-right: -25%;
+}
+
+

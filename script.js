@@ -162,16 +162,6 @@ sr.reveal(`.discount__data`, { origin: "left" });
 sr.reveal(`.discounted__images`, { origin: "right" });
 
 
-function Pay1() {
-  window.location.href = "https://checkout.stripe.com/c/pay/cs_test_a1t6sTNAtfgjJw1g9G1aPgyTG2jTLX8P83jQRZsHBwcXK1IW2mhVdY0Cmr#fidkdWxOYHwnPyd1blpxYHZxWjA0Sm0wdlRNXXBVZk9iMGZVUmJKZzBHbGhHNX9cNlJSUn1Hd3JmTkw3cWpkfU5%2FTGtCPVNGPHJXNjNzUWJ9Njxxf3NgSXxUPGBhZkRVXFM2PHwzUURDdWhBNTUxT3Y9SFU1bycpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl";
-} 
-
-function Pay2(){
-
-}
-
-
-
 function openMsgBox() {
   document.querySelector(".msg-btn5").style.opacity = "0";
 
@@ -189,7 +179,7 @@ function closeChat() {
 
 // Sample book data
 const books = [
-  { title: "All The King's Men", author: "Robert Penn Warren", image: "Books_Cover/All_the_king's_man.jpg", discount: "$8.49", price: "$9.99", pdfLink: "Sample_PdfViewer/sample_view.html?pdf=All_the_King's_men-pages-deleted.pdf" },
+  { title: "All The King's Men", author: "Robert Penn Warren", image: "Books_Cover/All_the_king's_man.jpg", discount: "$8.49", price: "$9.99", pdfLink: "Sample_PdfViewer/sample_view.html?pdf=All_the_King's_men-pages-deleted.pdf"  },
   { title: "Dragons of Eden", author: "Carl Sagan", image: "Books_Cover/Dragons_of_Eden.jpg", discount: "$10.19", price: "$11.99", pdfLink: "Sample_PdfViewer/sample_view.html?pdf=Dragons_of_Eden-pages-deleted.pdf"  },
   { title: "Huckleberry Finn", author: "Mark Twain", image: "Books_Cover/Huckleberry_Finn.jpg", discount: "$5.94", price: "$6.99", pdfLink: "Sample_PdfViewer/sample_view.html?pdf=The_Adventures_of_Huckleberry Finn-pages-deleted.pdf"  },
   { title: "Metamorphosis", author: "Franz Kafka", image: "Books_Cover/metamorphosis.jpg", discount: "$7.64", price: "$8.99", pdfLink: "Sample_PdfViewer/sample_view.html?pdf=Metamorphosis-pages-deleted.pdf"  },
@@ -200,7 +190,7 @@ const books = [
   { title: "The Testament", author: "John Grisham", image: "Books_Cover/The_testament.jpg", discount: "$8.49", price: "$9.99", pdfLink: "Sample_PdfViewer/sample_view.html?pdf=The_Testament-pages-deleted.pdf"  },
   { title: "Wizard of Oz", author: "L. Frank Baum", image: "Books_Cover/wizard_of_Oz.jpg", discount: "$5.94", price: "$6.99", pdfLink: "Sample_PdfViewer/sample_view.html?pdf=The_wizard_of_OZ-pages-deleted.pdf"  },
   { title: "Purity In Death", author: "J.D. Robb", image: "Books_Cover/purity_in_death.jpg", discount: "$7.64", price: "$8.99", pdfLink: "Sample_PdfViewer/sample_view.html?pdf=Purity_in_Death-pages-deleted.pdf"  },
-  { title: "The Bible", author: "St. Jerome", image: "Books_Cover/bible.jpg", discount: "$12.74", price: "$14.99", pdfLink: "Sample_PdfViewer/sample_view.html?pdf=-deleted.pdf"  },
+  { title: "The Bible", author: "St. Jerome", image: "Books_Cover/bible.jpg", discount: "$12.74", price: "$14.99", pdfLink: "Sample_PdfViewer/sample_view.html?pdf=Bible.pdf"  },
   { title: "Secret Backers", author: "Sidney Warburg", image: "Books_Cover/Hitler's_secret_backers.jpg", discount: "$8.49", price: "$9.99", pdfLink: "Sample_PdfViewer/sample_view.html?pdf=Secret_backers-pages-deleted.pdf"  },
   { title: "Lonesome Dove", author: "Larry McMurtry", image: "Books_Cover/Lonesome_dove.jpg", discount: "$8.49", price: "$9.99", pdfLink: "Sample_PdfViewer/sample_view.html?pdf=Lonesome_Dove-pages-deleted.pdf"  },
   { title: "Lord Of Rings", author: "J.R.R Tolkien", image: "Books_Cover/Lord_Of_Rings.jpg", discount: "$12.74", price: "$14.99", pdfLink: "Sample_PdfViewer/sample_view.html?pdf=Lord_of_Rings-pages-deleted.pdf"  },
@@ -208,24 +198,22 @@ const books = [
   // Add more books as needed
 ];
 
-// Function to display search results
 function displayResults(results) {
-  const searchResults = document.getElementById("searchResults");
-  const swiperWrapper = document.createElement("div");
-  swiperWrapper.classList.add("swiper-wrapper");
+  const swiperWrapper = document.querySelector(".featured__swiper");
   
-  searchResults.querySelector(".swiper").innerHTML = ""; // Clear previous results
+  // Clear previous results
+  swiperWrapper.innerHTML = "";
 
   if (results.length === 0) {
     const noResultsMsg = document.createElement("p");
     noResultsMsg.textContent = "No results found";
-    searchResults.querySelector(".swiper").appendChild(noResultsMsg);
+    swiperWrapper.appendChild(noResultsMsg);
     return;
   }
 
   results.forEach(book => {
     const article = document.createElement("article");
-    article.classList.add("featured__card", "swiper-slide");
+    article.classList.add("featured__card");
 
     const img = document.createElement("img");
     img.src = book.image;
@@ -265,22 +253,22 @@ function displayResults(results) {
     actions.classList.add("featured__actions");
     article.appendChild(actions);
 
-   // Create eye-line button
-   const eyeButton = document.createElement("button");
-   const eyeLink = document.createElement("a");
-   // Use the stored PDF link from the book data
-   eyeLink.href = book.pdfLink;
-   eyeLink.innerHTML = `<i class="ri-eye-line" style="color: green;"></i>`;
-   eyeButton.appendChild(eyeLink);
-   actions.appendChild(eyeButton);
-   swiperWrapper.appendChild(article);
+    // Create eye-line button
+    const eyeButton = document.createElement("button");
+    const eyeLink = document.createElement("a");
+    // Use the stored PDF link from the book data
+    eyeLink.href = book.pdfLink;
+    eyeLink.innerHTML = `<i class="ri-eye-line" style="color: green;"></i>`;
+    eyeButton.appendChild(eyeLink);
+    actions.appendChild(eyeButton);
+    
+    swiperWrapper.appendChild(article);
   });
-
-  searchResults.querySelector(".swiper").appendChild(swiperWrapper);
 }
 
 // Function to perform search
-function searchBooks(query) {
+function searchBooks() {
+  const query = document.getElementById("searchInput").value;
   const results = books.filter(book =>
     book.title.toLowerCase().includes(query.toLowerCase()) ||
     book.author.toLowerCase().includes(query.toLowerCase())
@@ -288,14 +276,19 @@ function searchBooks(query) {
   displayResults(results);
 }
 
-// Event listener for input changes
-document.getElementById("searchInput").addEventListener("input", function(event) {
-  const query = event.target.value;
-  searchBooks(query);
+// Event listener for search button click
+document.getElementById("searchButton").addEventListener("click", function(event) {
+  searchBooks();
 });
 
+// Event listener for input changes
+document.getElementById("searchInput").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") { // Trigger search on Enter key press
+    searchBooks();
+  }
+});
 
-function openMsgBox() {
+/*function openMsgBox() {
   document.querySelector(".msg-btn5").style.opacity = "0";
 
   document.querySelector(".containerQ").style.clipPath = "circle(75%)";
@@ -306,4 +299,443 @@ function closeChat() {
     "circle(0% at 90% 95%)";
 
   document.querySelector(".msg-btn5").style.opacity = "1";
+}*/
+
+function Pay_All_Kings_Man() {
+  fetch('http://localhost:8086/create-checkout-session', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({}) 
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+      return response.json();
+  })
+  .then(data => {
+      console.log(data);
+      window.location.href = data.redirect_url;
+  })
+  .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+  });
 }
+
+function Pay_Dragons_Of_Eden() {
+  fetch('http://localhost:8087/create-checkout-session', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({}) 
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+      return response.json();
+  })
+  .then(data => {
+      console.log(data);
+      window.location.href = data.redirect_url;
+  })
+  .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+  });
+}
+function Pay_Huckleberry_Finn() {
+  fetch('http://localhost:8088/create-checkout-session', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({}) 
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+      return response.json();
+  })
+  .then(data => {
+      console.log(data);
+      window.location.href = data.redirect_url;
+  })
+  .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+  });
+}
+
+
+function Pay_Metamorphosis() {
+  fetch('http://localhost:8089/create-checkout-session', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({}) 
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+      return response.json();
+  })
+  .then(data => {
+      console.log(data);
+      window.location.href = data.redirect_url;
+  })
+  .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+  });
+}
+
+function Pay_Money_For_Nothing() {
+  fetch('http://localhost:8090/create-checkout-session', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({}) 
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+      return response.json();
+  })
+  .then(data => {
+      console.log(data);
+      window.location.href = data.redirect_url;
+  })
+  .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+  });
+}
+
+
+function Pay_Crime() {
+  fetch('http://localhost:8091/create-checkout-session', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({}) 
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+      return response.json();
+  })
+  .then(data => {
+      console.log(data);
+      window.location.href = data.redirect_url;
+  })
+  .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+  });
+}
+
+
+function Pay_Oliver_Twist() {
+  fetch('http://localhost:8092/create-checkout-session', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({}) 
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+      return response.json();
+  })
+  .then(data => {
+      console.log(data);
+      window.location.href = data.redirect_url;
+  })
+  .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+  });
+}
+
+function Pay_Prince() {
+  fetch('http://localhost:8093/create-checkout-session', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({}) 
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+      return response.json();
+  })
+  .then(data => {
+      console.log(data);
+      window.location.href = data.redirect_url;
+  })
+  .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+  });
+}
+
+function Pay_testament() {
+  fetch('http://localhost:8094/create-checkout-session', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({}) 
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+      return response.json();
+  })
+  .then(data => {
+      console.log(data);
+      window.location.href = data.redirect_url;
+  })
+  .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+  });
+}
+
+function Pay_wizard_of_OZ() {
+  fetch('http://localhost:8095/create-checkout-session', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({}) 
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+      return response.json();
+  })
+  .then(data => {
+      console.log(data);
+      window.location.href = data.redirect_url;
+  })
+  .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+  });
+}
+
+function Pay_purity_in_death() {
+  fetch('http://localhost:8096/create-checkout-session', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({}) 
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+      return response.json();
+  })
+  .then(data => {
+      console.log(data);
+      window.location.href = data.redirect_url;
+  })
+  .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+  });
+}
+
+function Pay_bible() {
+  fetch('http://localhost:8097/create-checkout-session', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({}) 
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+      return response.json();
+  })
+  .then(data => {
+      console.log(data);
+      window.location.href = data.redirect_url;
+  })
+  .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+  });
+}
+
+function Pay_secret_backers() {
+  fetch('http://localhost:8098/create-checkout-session', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({}) 
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+      return response.json();
+  })
+  .then(data => {
+      console.log(data);
+      window.location.href = data.redirect_url;
+  })
+  .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+  });
+}
+
+function Pay_Lonesome_dove() {
+  fetch('http://localhost:8099/create-checkout-session', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({}) 
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+      return response.json();
+  })
+  .then(data => {
+      console.log(data);
+      window.location.href = data.redirect_url;
+  })
+  .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+  });
+}
+
+function Pay_Lord_Of_Rings() {
+  fetch('http://localhost:8100/create-checkout-session', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({}) 
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+      return response.json();
+  })
+  .then(data => {
+      console.log(data);
+      window.location.href = data.redirect_url;
+  })
+  .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+  });
+}
+
+function Pay_Black_Beauty() {
+  fetch('http://localhost:8101/create-checkout-session', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({}) 
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+      return response.json();
+  })
+  .then(data => {
+      console.log(data);
+      window.location.href = data.redirect_url;
+  })
+  .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+  });
+}
+
+
+function redirect() {
+  Pay_All_Kings_Man(); 
+}
+
+function redirect1() {
+  Pay_Dragons_Of_Eden();
+}
+
+function redirect2() {
+  Pay_Huckleberry_Finn();
+}
+
+function redirect3() {
+  Pay_Metamorphosis();
+}
+
+function redirect4() {
+ Pay_Money_For_Nothing();
+}
+
+function redirect5() {
+  Pay_Crime();
+}
+
+function redirect6() {
+  Pay_Oliver_Twist();
+}
+
+function redirect7() {
+  Pay_Prince();
+}
+
+function redirect8() {
+  Pay_testament();
+}
+
+function redirect9() {
+  Pay_wizard_of_OZ();
+}
+
+function redirect10() {
+  Pay_purity_in_death();
+}
+
+function redirect11() {
+  Pay_bible();
+}
+
+function redirect12() {
+  Pay_secret_backers();
+}
+
+function redirect13() {
+  Pay_Lonesome_dove();
+}
+
+function redirect14() {
+  Pay_Lord_Of_Rings();
+}
+
+function redirect15() {
+  Pay_Black_Beauty();
+}
+
+
+
+

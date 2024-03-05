@@ -30,6 +30,25 @@ if (isIE) {
 req.send();
 };
 
-document.querySelector('.overlay').addEventListener('click', function() {
+/*document.querySelector('.overlay').addEventListener('click', function() {
   document.querySelector('.featured__swiper').classList.toggle('blur');
-});
+});*/
+
+
+//Define a global variable to track whether redirect_Kings() has been called
+  var kingsRedirected = false;
+
+  // Function to disable buttons initially if redirect_Kings() hasn't been called
+  window.onload = function() {
+    if (!kingsRedirected) {
+      document.getElementById('readButton').disabled = true;
+      document.getElementById('downloadButton').disabled = true;
+    }
+  };
+
+  // Function to enable buttons when redirect_Kings() is called
+  function enableButtons() {
+    document.getElementById('readButton').disabled = false;
+    document.getElementById('downloadButton').disabled = false;
+  }
+

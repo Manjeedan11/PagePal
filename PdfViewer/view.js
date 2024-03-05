@@ -72,18 +72,18 @@ function getDefinition() {
 
     var word = document.getElementById('wordInput').value;
 
-    //Creating the API URL
+    
     var apiUrl = 'https://api.dictionaryapi.dev/api/v2/entries/en/' + word;
 
-    //Making the API request
+    
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
-            // Display the definition
+            
             displayDefinition(data);
         })
         .catch(error => {
-            //Handling exceptional errors
+            
             displayError("Error fetching definition. Please try again.");
         });
 }
@@ -91,16 +91,16 @@ function getDefinition() {
 function displayDefinition(data) {
     var resultDiv = document.getElementById('result');
 
-    //Clearing previous results
+    
     resultDiv.innerHTML = "";
 
-    //Checking if the data is empty
+    
     if (data.length === 0) {
         displayError("Definition not found.");
         return;
     }
 
-    //Displaying each definition
+    
     data.forEach(entry => {
         resultDiv.innerHTML += `<p><b>${entry.word}</b>: ${entry.meanings[0].definitions[0].definition}</p>`;
     });
