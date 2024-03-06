@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const collectionContainer = document.querySelector("#collection .swiper-wrapper");
     const featuredBooksContainer = document.querySelector("#featuredBooks .swiper-wrapper");
 
-    // Function to create swiper slides for collections
+    // To create swiper slides for collections
     function createCollectionSlide(book) {
         const slide = document.createElement("div");
         slide.classList.add("swiper-slide");
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         collectionContainer.appendChild(slide);
     }
 
-    // Function to create swiper slides for featured books
+    // To create swiper slides for featured books
     function createFeaturedBookSlide(book) {
         const slide = document.createElement("div");
         slide.classList.add("swiper-slide");
@@ -29,17 +29,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 <img src="${book.image}" alt="image" class="featured__img" />
                 <h2 class="featured__title">${book.title}</h2>
                 <h3 class="featured__author">by ${book.author}</h3>
-                
-                <button class="button">Add To Cart</button>
                 <div class="featured__actions">
-                    <!--<button><i class="ri-search-line"></i></button>
-                    <button onclick="window.location.href='feedback.html'"><i class="ri-feedback-line"></i></button>
-                    <button><i class="ri-eye-line"></i></button>-->
                 </div>
             </article>
         `;
 
         featuredBooksContainer.appendChild(slide);
+    }
+
+    function scrollToFeatured() {
+        var featuredSection = document.getElementById('featured');
+        if (featuredSection) {
+            // Scroll to the top of the featured section smoothly
+            window.scrollTo({
+                top: featuredSection.offsetTop,
+                behavior: 'smooth'
+            });
+        }
     }
 
     // Function to fetch book recommendations based on the entered book name
@@ -57,9 +63,9 @@ document.addEventListener("DOMContentLoaded", function () {
             // collectionContainer.innerHTML = ''; // Remove this line
             // featuredBooksContainer.innerHTML = ''; // Remove this line
 
-            // Display recommended books for collections and featured books separately
+            //Display recommended books for collections and featured books separately
             data.books_by_author.forEach(book => {
-                // Assuming there's a field 'collection' in the book object indicating if it's a collection book
+                //Assuming there's a field 'collection' in the book object indicating if it's a collection book
                 if (book.collection === true) {
                     createCollectionSlide({ image: book['Image-URL-S'], title: book['Book-Title'], author: book['Book-Author'] });
                 } else {
@@ -67,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            // Initialize Swiper for collections
+            //Initializing Swiper for collections
             const collectionSwiper = new Swiper("#collection .featured__swiper", {
                 slidesPerView: "auto",
                 spaceBetween: 20,
@@ -77,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
             });
 
-            // Initialize Swiper for featured books
+            //Initializing Swiper for featured books
             const featuredBooksSwiper = new Swiper("#featuredBooks .featured__swiper", {
                 slidesPerView: "auto",
                 spaceBetween: 20,
@@ -96,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById('bookForm').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent default form submission
-        var bookTitle = document.getElementById('book_title').value; // Changed to correct id
+        var bookTitle = document.getElementById('book_title').value; 
         fetchRecommendations(bookTitle);
     });
 

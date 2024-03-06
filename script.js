@@ -288,18 +288,7 @@ document.getElementById("searchInput").addEventListener("keydown", function(even
   }
 });
 
-/*function openMsgBox() {
-  document.querySelector(".msg-btn5").style.opacity = "0";
-
-  document.querySelector(".containerQ").style.clipPath = "circle(75%)";
-}
-
-function closeChat() {
-  document.querySelector(".containerQ").style.clipPath =
-    "circle(0% at 90% 95%)";
-
-  document.querySelector(".msg-btn5").style.opacity = "1";
-}*/
+/*Payment Portal*/
 
 function Pay_All_Kings_Man() {
   fetch('http://localhost:8086/create-checkout-session', {
